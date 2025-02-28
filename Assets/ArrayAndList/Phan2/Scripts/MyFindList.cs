@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class MyFindList : MonoBehaviour
 {
+    //1.
     #region Tìm kiếm cơ bản
+    //có thể lướt nhanh qua phần này
     /*
      //khai báo list sau đó sử dụng các hàm có sẵn trong collection để thực hiện tìm kiếm
     public List<int> numbers;
@@ -44,6 +46,8 @@ public class MyFindList : MonoBehaviour
     //tuy nhiên với một danh sách class phức tạp, cách thức tìm kiếm sẽ khác đi 1 chút
      */
     #endregion
+
+    //2.
     #region Tìm kiếm một danh sách Class
     //Trước tiên hãy tạo 1 class và khai báo list Player
     public class Player
