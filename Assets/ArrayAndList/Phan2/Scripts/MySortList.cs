@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class MySortList : MonoBehaviour
 {
+    //1. (có thể lướt nhanh qua phần này)
     #region Sort cơ bản
     //có thể lướt nhanh qua phần này
     /*
@@ -30,6 +31,9 @@ public class MySortList : MonoBehaviour
     //tuy nhiên với một danh sách class phức tạp, cách thức tìm kiếm sẽ khác đi 1 chút
      */
     #endregion
+
+
+    //2.
     #region Sắp xếp danh sách Class trong List<Player>
 
     public class Player
@@ -61,6 +65,13 @@ public class MySortList : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Before Sort");
+        Debug.Log("---------------");
+        foreach (Player p in players)
+        {
+            Debug.Log($"Name: {p.Name}/Score: {p.Score}");
+        }
+
         // p1.Score.CompareTo(p2.Score) sử dụng trong sort sẽ trả về 3 giá trị
         // 1 nếu p1 > p2
         // 0 nếu p1 = p2
@@ -88,6 +99,15 @@ public class MySortList : MonoBehaviour
             }
             return scoreComparison;
         });
+
+        Debug.Log("---------------");
+        Debug.Log("After Sort");
+        Debug.Log("---------------");
+
+        foreach (Player p in players)
+        {
+            Debug.Log($"Name: {p.Name}/Score: {p.Score}");
+        }
     }
 
     #endregion

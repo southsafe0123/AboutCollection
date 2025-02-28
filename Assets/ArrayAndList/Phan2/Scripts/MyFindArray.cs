@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
 
-public class MyFindArrayBasic : MonoBehaviour
+public class MyFindArray : MonoBehaviour
 {
     //nếu chưa xem MyFindList.cs, hãy xem nó đầu tiên...
 
-    //1.
+    //1. (có thể lướt nhanh qua phần này)
     #region Tìm kiếm cơ bản
-    //có thể lướt nhanh qua phần này
     /*
      
      public int[] numbers;
@@ -44,7 +43,6 @@ public class MyFindArrayBasic : MonoBehaviour
     */
     #endregion
     #region các hàm hỗ trợ tìm kiếm cơ bản
-    //có thể lướt nhanh qua phần này
     /*
      // Thêm phần tử vào mảng
     private int[] AddToArray(int[] array, int newItem)
@@ -173,6 +171,12 @@ public class MyFindArrayBasic : MonoBehaviour
 
         // Tìm tất cả các phần tử thỏa mãn điều kiện (ví dụ: có điểm số > 100)
         Player[] highScorePlayers = FindAll(players, 100);
+
+        Debug.Log("index: " + index);
+        Debug.Log("lastIndex: " + lastIndex);
+        Debug.Log("isContain: " + isContain);
+        Debug.Log("playerFound.Name/playerFound.Score: " + playerFound.Name + "/" + playerFound.Score);
+        Debug.Log("highScorePlayers.Length: " + highScorePlayers.Length);
     }
     #endregion
     #region các hàm hỗ trợ tìm kiếm Class

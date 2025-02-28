@@ -118,7 +118,7 @@ public class MySortArray : MonoBehaviour
    */
 
     #endregion
-
+     
     //2.
     #region Sort Class
 
@@ -151,6 +151,13 @@ public class MySortArray : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Before Sort");
+        Debug.Log("---------------");
+        foreach (Player p in players)
+        {
+            Debug.Log($"Name: {p.Name}/Score: {p.Score}");
+        }
+
 
         // Sắp xếp Player theo điểm số tăng dần
         SortPlayerByScoreAscending(players);
@@ -189,6 +196,15 @@ public class MySortArray : MonoBehaviour
             }
             return scoreComparison;
         });
+
+        Debug.Log("---------------");
+        Debug.Log("After Sort");
+        Debug.Log("---------------");
+
+        foreach (Player p in players)
+        {
+            Debug.Log($"Name: {p.Name}/Score: {p.Score}");
+        }
     }
 
     #endregion

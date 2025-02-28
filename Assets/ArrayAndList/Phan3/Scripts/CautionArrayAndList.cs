@@ -3,9 +3,19 @@ using UnityEngine;
 
 public class CautionArrayAndList : MonoBehaviour
 {
-    //khai báo list và array
-    public List<int> numbers = new List<int>(5);
-    
+    //khai báo
+    public List<int> numbers;
+    public List<string> players;
+    private void Start()
+    {
+        //CacheExample();
+        //UseArrayExample();
+        //UseListExample(); 
+        //CapacityCaution1();
+        //CapacityCaution2();
+        //Caution();
+        //Caution2();
+    }
     //các lưu ý khi dùng list và array
     #region Nên cache numbers.count trước khi dùng for
     private void CacheExample()
@@ -39,7 +49,7 @@ public class CautionArrayAndList : MonoBehaviour
     private void UseListExample()
     {
         // List phù hợp khi dữ liệu có thể thay đổi linh hoạt (thêm/xóa phần tử)
-        List<string> players = new List<string> { "Alice", "Bob", "Charlie" };
+        players = new List<string> { "Alice", "Bob", "Charlie" };
 
         // Thêm phần tử vào danh sách
         players.Add("David");
@@ -67,7 +77,7 @@ public class CautionArrayAndList : MonoBehaviour
     // Cấp phát bộ nhớ mới và sao chép dữ liệu cũ vào mảng mới, dẫn đến tốn thời gian và bộ nhớ tạm thời.
     private void CapacityCaution1()
     {
-        List<int> numbers = new List<int>();
+        numbers = new List<int>();
 
         for (int i = 0; i < 10; i++)
         {
@@ -81,8 +91,7 @@ public class CautionArrayAndList : MonoBehaviour
 
     private void CapacityCaution2()
     {
-       
-        List<int> numbers = new List<int>(1000);
+        numbers = new List<int>(1000);
         for (int i = 0; i < 1000; i++)
         {
             numbers.Add(i);
@@ -108,13 +117,12 @@ public class CautionArrayAndList : MonoBehaviour
 
     void Caution()
     {
-        List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
-
+        numbers = new List<int> { 1, 2, 3, 4, 5 };
         for (int i = 0; i < numbers.Count; i++)
         {
             if (numbers[i] % 2 == 0)
             {
-                numbers.RemoveAt(i); // Lỗi: IndexOutOfRangeException
+                numbers.RemoveAt(i);
             }
         }
     }
@@ -123,6 +131,7 @@ public class CautionArrayAndList : MonoBehaviour
     //nếu cố ý sẽ bị throw InvalidOperationException
     void Caution2()
     {
+        numbers = new List<int> { 1, 2, 3, 4, 5 };
         foreach (var num in numbers)
         {
             if (num % 2 == 0)
@@ -131,10 +140,6 @@ public class CautionArrayAndList : MonoBehaviour
             }
         }
     }
-    #endregion
-
-
-    #region
     #endregion
 }
 

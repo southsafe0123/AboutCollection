@@ -75,28 +75,26 @@ public class MyFindList : MonoBehaviour
 
     void Start()
     {
-        /*
-
-         Nếu player chứa dữ liệu phức tạp hơn kết quả có thể không chính xác 
-         Vì hai đối tượng khác nhau trong bộ nhớ sẽ không bằng nhau, dù thuộc tính giống hệt nhau.
-          Player player = new Player("Alice", 150);
+        //Nếu player chứa dữ liệu phức tạp hơn, kết quả có thể không chính xác.
+        //Vì hai đối tượng khác nhau trong bộ nhớ sẽ không bằng nhau, dù thuộc tính giống hệt nhau.
+        #region code
+        //Player player = new Player("Alice", 150);
         //Tìm index đầu tiên của phần tử trong List
-        int index = players.IndexOf(player);
+        //int index = players.IndexOf(player);
 
         //Tìm index cuối cùng của phần tử trong List
-        int lastIndex = players.LastIndexOf(player);
+        //int lastIndex = players.LastIndexOf(player);
 
         //Kiểm tra phần tử có tồn tại trong List hay không
-        bool isContain = players.Contains(player);
-
-         */
+        //bool isContain = players.Contains(player);
+        #endregion
 
         // cách thay thế
         //Tìm index đầu tiên của phần tử trong List
         int index = players.FindIndex(p => p.Score == 150);
 
         //Tìm index cuối cùng của phần tử trong List
-        int lastIndex = players.FindLastIndex(p =>p.Score == 100);
+        int lastIndex = players.FindLastIndex(p => p.Score == 100);
 
         //Kiểm tra phần tử có tồn tại trong List hay không
         bool isContain = players.Exists(p => p.Score == 150);
@@ -108,11 +106,21 @@ public class MyFindList : MonoBehaviour
         List<Player> listFound = players.FindAll(x => x.Score > 100);
 
         //Tìm index đầu tiên của phần tử thỏa mãn điều kiện
-        int indexPlayer = players.FindIndex(x => x.Score > 100); // kết quả trả về là 2.
-        int indexNumber2 = players.FindIndex(x => x.Score > 500); // kết quả trả về là -1 nếu không tìm thấy số thỏa điều kiện
+        int indexPlayer = players.FindIndex(x => x.Score > 100);
+        int indexNumber2 = players.FindIndex(x => x.Score > 500);
 
         //Kiểm tra sự tồn tại của phần tử thỏa mãn điều kiện
-        bool exists = players.Exists(p => p.Name == "Volcic"); //Trả về false vì không có tên cần tìm
+        bool exists = players.Exists(p => p.Name == "Volcic");
+
+        Debug.Log("index: " + index);
+        Debug.Log("lastIndex: " + lastIndex);
+        Debug.Log("isContain: " + isContain);
+        Debug.Log("listFound count: " + listFound.Count);
+        Debug.Log("playerFound.Name/playerFound.Score: " + playerFound.Name + "/" + playerFound.Score);
+        Debug.Log("indexPlayer: " + indexPlayer);
+        Debug.Log("indexNumber2: " + indexNumber2);
+        Debug.Log("exists: " + exists);
+
     }
 
     #endregion
