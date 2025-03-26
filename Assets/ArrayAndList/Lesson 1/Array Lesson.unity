@@ -166,6 +166,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e74ea0994f99c784faed8ce143afd81d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrFloat: []
+  arrInt: 
+  arrString: []
+  arrPlayer: []
 --- !u!1 &828324874
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,10 +303,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1504043779}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5f8be3bca8d88f44b465ac91ae91dcc, type: 3}
+  m_Script: {fileID: 11500000, guid: c493029eda4d07f438bfe28c8d32e667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numbers: 
+  numbers: 0000000000000000000000000000000000000000
 --- !u!1 &1699018378
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,7 +317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1699018379}
   m_Layer: 0
-  m_Name: "\u0110\u1ECDc code theo th\u1EE9 t\u1EF1"
+  m_Name: "\u0110\u1ECDc code v\xE0 ch\u1EA1y code theo th\u1EE9 t\u1EF1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
