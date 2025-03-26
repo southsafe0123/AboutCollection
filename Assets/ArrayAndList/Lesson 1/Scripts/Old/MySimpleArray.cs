@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 //Chúng ta sẽ lướt nhanh qua phần này
 public class MySimpleArray : MonoBehaviour
 {
-
     //khai báo array
     public int[] numbers;
     private void Awake()
@@ -79,9 +80,9 @@ public class MySimpleArray : MonoBehaviour
             if (value != valueToRemove)
                 newArr[index++] = value;
         }
-
         numbers = newArr;
     }
+    
 }
 
 //Array là như vậy, còn List<T> sẽ trông thế nào?
