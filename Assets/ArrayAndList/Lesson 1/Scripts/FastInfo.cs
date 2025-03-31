@@ -32,7 +32,14 @@ public class FastInfo : MonoBehaviour
     // Xem Demo và giải thích cho đoạn 4
     MySimpleArray MySimpleArray;
 
-    //5. 
+    //5. Sắp xếp và đảo ngược mảng
+    // - Sắp xếp bằng hệ thông sử dụng Array.Sort()
+    // - Sắp xếp bằng hệ thống sử dụng hàm tự chế.
+    // - Đảo ngược mảng bằng hệ thông sử dụng Array.Sort()
+    // - Đảo ngược mảng bằng hệ thống sử dụng hàm tự chế.
+
+    // Xem Demo và giải thích cho đoạn 5
+    MyClassArray MyClassArray;
 
 
 

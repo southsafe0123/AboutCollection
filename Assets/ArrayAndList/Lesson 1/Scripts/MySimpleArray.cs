@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using com.cyborgAssets.inspectorButtonPro;
 using UnityEngine;
 //Chúng ta sẽ lướt nhanh qua phần này
-//PlayEditon và sử dụng các nút có sẵn trên editor
+//Play và sử dụng các nút có sẵn trên editor
 public class MySimpleArray : MonoBehaviour
 {
     // với một array kiểu nguyên thủy việc khai báo và truy xuất sẽ có những cách như sau
@@ -68,7 +68,7 @@ public class MySimpleArray : MonoBehaviour
         int[] newArr = new int[numbers.Length - 1];
         int newIndex = 0;
 
-        //vòng lặp for chạy từ 0 đến độ dài của array numbers
+        //có thể dùng vòng lặp for chạy từ 0 đến độ dài của array numbers
         for (int i = 0; i < numbers.Length; i++)
         {
             //check điều kiện vào loại phần tử muốn xóa
@@ -88,6 +88,8 @@ public class MySimpleArray : MonoBehaviour
     {
         //đếm lengh mới nếu không có value được truyền vào
         int newSize = 0;
+
+        //có thể dùng foreach để duyệt qua từng phần tử trong mảng
         foreach (int value in numbers)
         {
             if (value != valueToRemove)
@@ -98,11 +100,17 @@ public class MySimpleArray : MonoBehaviour
         int[] newArr = new int[newSize];
         int index = 0;
 
-        //vòng lặp for chạy tuần từ mỗi phần tử trong array
-        foreach (int value in numbers)
+        //ngoài ra có thể sử dụng while để lặp qua các phần tử và thực hiện truy xuất
+
+        int i = 0;
+        while (i < numbers.Length)
         {
-            if (value != valueToRemove)
-                newArr[index++] = value;
+            if (numbers[i] != valueToRemove)
+            {
+                newArr[index] = numbers[i];
+                index++;
+            }
+            i++;
         }
 
         //thay array mới cho numbers;
