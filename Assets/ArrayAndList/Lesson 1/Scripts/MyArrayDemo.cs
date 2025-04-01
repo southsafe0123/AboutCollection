@@ -5,7 +5,6 @@ using com.cyborgAssets.inspectorButtonPro;
 using UnityEngine;
 using static UnityEditor.Progress;
 
-//hàm chính để chạy scene
 public class MyArrayDemo : MonoBehaviour
 {
     // Mảng khai báo có thể chứa dữ liệu thuộc kiểu nguyên thủy hoặc kiểu tham chiếu.
@@ -18,9 +17,10 @@ public class MyArrayDemo : MonoBehaviour
     public Player[] arrPlayer;
     private void Start()
     {
-        // Tuy đã khai báo, nhưng biến mảng vẫn chưa được khởi tạo (chưa tạo vùng nhớ) vậy nên mặc định các biến sẽ có giá trị null.
-        // -> Do array là một biến tĩnh phải cấp phát vùng nhớ khi vừa khởi tạo.
-        // vậy nên ta cần phải khai báo độ dài mảng cho nó.
+        // Tuy đã khai báo, nhưng các biến mảng vẫn chưa được khởi tạo (chưa cấp phát vùng nhớ), nên mặc định các biến mảng này có giá trị là null.
+
+        // Array trong C# là kiểu tham chiếu, vì vậy cần phải cấp phát vùng nhớ trước khi sử dụng.
+        // cuối cùng, mảng có độ dài cố định nên cần chỉ định kích thước khi khởi tạo.
 
         // Kiểu nguyên thủy ví dụ
         arrFloat = new float[5];

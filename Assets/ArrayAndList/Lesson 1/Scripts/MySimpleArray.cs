@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using com.cyborgAssets.inspectorButtonPro;
+﻿using com.cyborgAssets.inspectorButtonPro;
 using UnityEngine;
 //Chúng ta sẽ lướt nhanh qua phần này
 //Play và sử dụng các nút có sẵn trên editor
@@ -30,7 +28,7 @@ public class MySimpleArray : MonoBehaviour
             Debug.Log(numbers[index]);
     }
     [ProButton]
-    void GetAllValue1()
+    void GetAllValueUsingFor()
     {
         //sử dụng for để duyệt qua các phần tử
         for (int i = 0; i < numbers.Length; i++)
@@ -46,7 +44,7 @@ public class MySimpleArray : MonoBehaviour
             numbers[index] = value;
     }
     [ProButton]
-    void GetAllValue2()
+    void GetAllValueUsingForEach()
     {
         //sử dụng foreach duyệt qua các phần tử
         foreach (int number in numbers)
@@ -54,17 +52,28 @@ public class MySimpleArray : MonoBehaviour
             Debug.Log(number);
         }
     }
+    [ProButton]
+    void GetAllValueUsingWhile()
+    {
+        //sử dụng while duyệt qua các phần tử
+        int i  = 0;
+        while (i < numbers.Length)
+        {
+            Debug.Log(numbers[i]);
+            i++;
+        }
+    }
 
     // Vì mảng (array) là kiểu dữ liệu cố định kích thước và không được hỗ trợ bởi các phương thức của collection,
     // nên khi muốn xoá phần tử, thường phải tự xử lý bằng cách sử dụng vòng lặp để tạo một mảng mới không chứa phần tử cần xoá.
 
-    // Xóa phần tử theo giá trị
+    // Xóa phần tử theo index
     [ProButton]
     void RemoveByIndex(int index)
     {
         if (index < 0 && index >= numbers.Length) return;
 
-        // khai báo array và cấp phát vùng nhớ.
+        // khai báo array và chỉ định kích thước.
         int[] newArr = new int[numbers.Length - 1];
         int newIndex = 0;
 
@@ -82,7 +91,7 @@ public class MySimpleArray : MonoBehaviour
         numbers = newArr;
     }
 
-    // Xóa phần tử theo index
+    // Xóa phần tử theo giá trị
     [ProButton]
     void RemoveByValue(int valueToRemove)
     {
@@ -96,7 +105,7 @@ public class MySimpleArray : MonoBehaviour
                 newSize++;
         }
 
-        // khai báo array và cấp phát vùng nhớ.
+        // khai báo array và chỉ định kích thước.
         int[] newArr = new int[newSize];
         int index = 0;
 
@@ -117,7 +126,7 @@ public class MySimpleArray : MonoBehaviour
         numbers = newArr;
     }
     // Không thể thêm phần tử vào mảng sau khi khởi tạo, vì Array là một kiểu dữ liệu tĩnh. (cố định kích thước sau khi khởi tạo).
-    // việc cấp phát vùng nhớ = 5, array index sẽ có giá trị N-1 vậy nên nếu index lớn hơn 4 sẽ gây lỗi IndexOutOfRangeException
+    // việc chỉ định kích thước = 5, array index sẽ có giá trị N-1 vậy nên nếu index lớn hơn 4 sẽ gây lỗi IndexOutOfRangeException
     [ProButton]
     void TestError()
     {
